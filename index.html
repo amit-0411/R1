@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noida Taekwondo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style> .clock { font-size: 24px; font-family: 'Arial', sans-serif; color: #333; margin: 20px; }
+    </style>
+    <style>
+        /* Add your CSS styles here */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+        }
+        .mySlides {
+            display: none;
+        }
+        img {
+            vertical-align: middle;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <!-- <img src="..\Images\Logo1.jpeg" alt="DTA Logo"> -->
+                <img src="..\Images\Logo2r.jpeg" alt="DTA Logo">
+                <img src="https://kheloindia.gov.in/assets/logo.svg" alt="DTA Logo">
+                <img src="..\Images\WT1.jpeg" alt="DTA Logo">
+
+            </a>
+            <div class="clock" id="clock"></div>
+            <script> function updateClock() { const clockElement = document.getElementById('clock'); const now = new Date(); const hours = now.getHours().toString().padStart(2, '0'); const minutes = now.getMinutes().toString().padStart(2, '0'); const seconds = now.getSeconds().toString().padStart(2, '0'); clockElement.textContent = `${hours}:${minutes}:${seconds}`; } setInterval(updateClock, 1000); updateClock(); // Initial call to display clock immediately </script>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <!-- <li><a href="#trad">Trades</a></li> -->
+                    <li><a href="..\Investment\index.html">Coaches and Refree</a></li>
+                    <li><a href="">Coaches</a></li>
+                    <!-- <li class="dropdown">
+                        <a  class="dropbtn">Survey</a>
+                        <div class="dropdown-content">
+                            <a href="..\survey\Application\index.html">App Survey</a>
+                            <a href="..\survey\Parties\index.html">P.Party Survey</a>
+                            <a href="..\survey\Policitician\index.html">P.Candidate Survey</a>
+                            <a href="..\survey\Result\index.html">Survey-Result</a>
+                        </div>
+                        
+                    </li> -->
+                    <li><a href="#event">Events</a></li>
+                    <li><a href="../login/loginh.html">Login</a></li>
+                    
+                    <li class="dropdown">
+                        <a  class="dropbtn">More</a>
+                        <div class="dropdown-content">
+                            <a href="/option1">Learn</a>
+                            <a href="/option2">Community</a>
+                            <a href="/option3">About me</a>
+                            <a href="/option1">Press</a>
+                            <a href="/option2">News</a>
+                            <a href="/option3">Report</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="home">
+        
+        <div class="text-container">
+            <h1>Welcome to <span>Noida Taekwondo Association</span></h1>
+            <p>Your platform to engage with District Taekwondo Association in an innovative way!</p>
+            <!-- <button onclick="showMoreInfo()">Learn More</button> -->
+            <!-- <button >Download</button> -->
+            
+            <button onclick="window.location.href='../login/loginh.html';" >Login</button>
+
+
+        </div>
+         <!-- Your existing content here -->
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="C:\Users\theam\Desktop\Bhanu PPt\img\np2.jpeg" style="width: 100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="C:\Users\theam\Desktop\Bhanu PPt\img\np1.jpeg" style="width: 100%">
+        </div> 
+        <div class="mySlides fade">
+            <img src="..\Images\Front_Image.jpeg" style="width:100%" >
+        </div>
+        <!-- Add more slides as needed  -->
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <!-- <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+    </div>
+
+    <br>
+
+    <!-- Dots for navigation -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span>  
+        <!-- Add more dots as needed -->
+    </div>
+
+    <!-- Your existing content here -->
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+        
+        <!-- <div class="image-container"> -->
+            <!-- <img src="..\Images\Front_Image.jpeg" alt="PolitiTrade Image">  -->
+        <!-- </div> -->
+    </section>
+
+
+  
+
+
+
+
+    <!-- <main>
+        <section class="container" id="trad">
+             Search bar with India-specific fields and options -->
+            <!-- <div class="search-bar">
+                <div class="search-input">
+                    <input type="text" placeholder="Search Politician by Name" class="form-control" id="politicianName">
+                </div>
+                <div class="search-input">
+                    <select class="form-control" id="state">
+                        <option value="">State/Union Territory</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="DL">Delhi</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="TN">Tamil Nadu</option> -->
+                        <!-- Add more states/UTs as needed -->
+                    <!-- </select> -->
+                <!-- </div>
+                <div class="search-input">
+                    <select class="form-control" id="party">
+                        <option value="">Political Party</option>
+                        <option value="BJP">BJP</option>
+                        <option value="INC">Congress</option>
+                        <option value="AAP">AAP</option>
+                        <option value="SP">Samajwadi Party</option>
+                        <option value="TMC">TMC</option>
+                         Add more parties as needed 
+                    </select> -->
+                <!-- </div>
+                <div class="search-input">
+                    <select class="form-control" id="position">
+                        <option value="">Position</option>
+                        <option value="MP">Member of Parliament</option>
+                        <option value="MLA">Member of Legislative Assembly</option>
+                        <option value="CM">Chief Minister</option>
+                        <option value="PM">Prime Minister</option> -->
+                        <!-- Add more positions as needed -->
+                    <!-- </select>
+                </div>
+                <div class="search-input">
+                    <select class="form-control" id="sector">
+                        <option value="">Sector of Influence</option>
+                        <option value="Education">Education</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Infrastructure">Infrastructure</option>
+                        <option value="Agriculture">Agriculture</option>
+                        <option value="Technology">Technology</option>
+                         Add more sectors as needed 
+                    </select>
+                </div>
+                <div class="search-input">
+                    <select class="form-control" id="gender">
+                        <option value="">Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select> -->
+                <!-- </div>
+                <div class="search-input">
+                    <input type="text" placeholder="Market Cap" class="form-control" id="marketCap">
+                </div>
+                <div class="search-input">
+                    <select class="form-control" id="assetType">
+                        <option value="">Asset Type</option>
+                        <option value="Equity">Equity</option>
+                        <option value="Bond">Bond</option>
+                        <option value="Real Estate">Real Estate</option>
+                        <option value="Cryptocurrency">Cryptocurrency</option>
+                        Add more asset types as needed -->
+                    <!-- </select>
+                </div>
+                <div class="search-input">
+                    <input type="text" placeholder="Transaction Label" class="form-control" id="transactionLabel">
+                </div>
+            </div>
+
+            Search button
+            <div class="search-action">
+                <button class="btn btn-primary" id="searchAll">Search</button>
+            </div>  -->
+
+            <!-- Stats section with India-specific data -->
+            <!-- <div class="stats">
+                <div class="stat">
+                    <h3>Total Trades</h3>
+                    <p>1,234</p>
+                </div>
+                <div class="stat">
+                    <h3>Active Politicians</h3>
+                    <p>567</p>
+                </div>
+                <div class="stat">
+                    <h3>Popular Constituencies</h3>
+                    <p>45</p>
+                </div>
+                <div class="stat">
+                    <h3>Current Sentiment Trends</h3>
+                    <p>Positive</p>
+                </div>
+            </div>
+        </section>
+    </main>   -->
+
+
+    <body>
+        <section id="event">
+            <div class="leftBox">
+                <div class="content">
+                    <h1>Upcoming Events and Insights</h1>
+                    <p>
+                        Get ready to kick into high gear with our exciting lineup of Taekwondo events this season! From local tournaments showcasing the best talent in the region to intensive training camps led by world-renowned instructors, there's something for everyone. Stay tuned for our special guest seminars, where you'll have the chance to learn advanced techniques and strategies from Taekwondo masters. Our insights section will also feature exclusive interviews with top athletes, offering you a glimpse into their training regimes and mental preparation. Don't miss out on these opportunities to elevate your skills and be a part of our vibrant Taekwondo community!                    </p>
+                </div>
+            </div>
+    
+            <div class="events">
+                <ul>
+                    <li>
+                        <div class="time">
+                            <h2>17th -20th <br><span>Feb<br>2024</span></h2>
+                        </div>
+                        <div class="details">
+                            <p>
+                                <h3>●	The 1st  PRIME MINISTER CUP-2024 (International)</h3> Held between 17th of February to 20th of February, where Taekowndo players from India, Nepal and Bangladesh were part of it. 
+                            </p>
+                            <a href="#">View Details</a>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </li>
+    
+                    <li>
+                        <div class="time">
+                            <h2>5th-8th <br><span>Oct<br>2023</span></h2>
+                        </div>
+                        <div class="details">
+                            <h3>●	2ND  NOIDA OPEN NATIONAL TAEKWONDO CHAMPIONSHIP </h3>
+                            <p>
+                                was held from 5th October  to 8th Oct ,2024 at Noida  Indoor Stadium, Sector 21A Noida ( 1780 participants from pan India including Severvices team, defence team , SAI team )                            </p>
+                            <a href="#">View Details</a>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </li>
+                    
+                    <li>
+                        <div class="time">
+                            <h2>11th-14th <br><span>May<br>2022</span></h2>
+                        </div>
+                        <div class="details">
+                            <h3>●	1ST NOIDA OPEN NATIONAL TAEKWONDO CHAMPIONSHIP </h3>
+                            <p>
+                                was held from 11th May to 14th May,2023 at Vijay Singh Pathik Indoor Stadium, Greater Noida ( 1200 participents from pan India )                            </p>
+                            <a href="#">View Details</a>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PolitiTrade. All rights reserved. | Privacy Policy | Terms of Use</p>
+            <p>Connecting you with the pulse of Indian politics and investment.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
